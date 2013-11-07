@@ -6,5 +6,7 @@ scrabble-cheater.py - A Scrabble "cheater" (see https://openhatch.org/wiki/Hacke
 Usage: 
 
 python scrabble.py
+
 python scrabble-cheater.py <LETTERS>
+
 e.g python scrabble-cheater.py ZAEFIEE
