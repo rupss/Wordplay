@@ -7,6 +7,6 @@ Usage:
 
 python scrabble.py
 
-python scrabble-cheater.py <LETTERS>
+python scrabble-cheater.py LETTERS
 
 e.g python scrabble-cheater.py ZAEFIEE
