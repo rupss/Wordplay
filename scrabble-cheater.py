@@ -72,7 +72,15 @@ def get_possible_words(sorted_strings_to_corresponding_word_list, letters):
 	combinations = get_combinations(letters)
 	possible_words = set()
 	for combo in combinations: 
+		print sorted_strings_to_corresponding_word_list[sort(combo)]
 		possible_words = possible_words.union(set(sorted_strings_to_corresponding_word_list[sort(combo)]))
+	return possible_words
+
+def alternate_get_possible_words(string_to_word_list, letters): 
+	combinations = get_combinations(letters)
+	possible_words = []
+	for combo in combinations: 
+		possible_words.extend(string_to_word_list[sort(combo)])
 	return possible_words
 
 def compare_word_score_tuples(one, two): 
@@ -88,7 +96,7 @@ def scrabble_cheater(letters):
 	"""
 	all_words = read_file()
 	sorted_strings_to_corresponding_word_list = build_word_dict(all_words)
-	possible_words = get_possible_words(sorted_strings_to_corresponding_word_list, letters)
+	possible_words = alternate_get_possible_words(sorted_strings_to_corresponding_word_list, letters)
 	scored_words = qsort([(word, score_word(word)) for word in possible_words], compare_word_score_tuples)
 	for (word, score) in scored_words: 
 		print score, word
